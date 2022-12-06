@@ -10,28 +10,40 @@ using UnityEngine.UI;
 /// </summary>
 public class TransitionRoom : MonoBehaviour
 {
-    // Canvas link to the cantina
-    GameObject CantinaCanvas;
-    // Sphere where is the cantina video
-    GameObject CantinaSphere;
-    // Canvas link to the livingRoom
-    GameObject LivingRoomCanvas;
-    // Sphere where is the livingRoom video
-    GameObject LivingRoomSphere;
     // Canvas to make the blackscreen
     GameObject BlackScreen;
     // Animator in child of BlackScreen
     Animator BlackScreenAnimator;
+    // Canvas link to the cantina
+    GameObject CantinaCanvas;
+    // Sphere where is the cantina video
+    GameObject CantinaSphere;
+    // Canvas link to the cube
+    GameObject CubeCanvas;
+    // Sphere where is the cube video
+    GameObject CubeSphere;
+    // Canvas link to the livingRoom
+    GameObject LivingRoomCanvas;
+    // Sphere where is the livingRoom video
+    GameObject LivingRoomSphere;
+    // Canvas link to the mezzanine
+    GameObject MezzanineCanvas;
+    // Sphere where is the mezzanine
+    GameObject MezzanineSphere;
 
     // Start is called before the first frame update
     void Start()
     {
-        CantinaCanvas = GameObject.Find("CantinaCanvas");
-        CantinaSphere = GameObject.Find("Cantina");
-        LivingRoomCanvas = GameObject.Find("LivingRoomCanvas");
-        LivingRoomSphere = GameObject.Find("LivingRoom");
         BlackScreen = GameObject.Find("BlackScreen");
         BlackScreenAnimator = BlackScreen.GetComponentInChildren<Animator>();
+        CantinaCanvas = GameObject.Find("CantinaCanvas");
+        CantinaSphere = GameObject.Find("Cantina");
+        CubeCanvas = GameObject.Find("CubeCanvas");
+        CubeSphere = GameObject.Find("Cube");
+        LivingRoomCanvas = GameObject.Find("LivingRoomCanvas");
+        LivingRoomSphere = GameObject.Find("LivingRoom");
+        MezzanineCanvas = GameObject.Find("MezzanineCanvas");
+        MezzanineSphere = GameObject.Find("Mezzanine");
     }
 
     // Enable the canvas of BlackScreen GameObject and enable the animator to 
@@ -54,6 +66,34 @@ public class TransitionRoom : MonoBehaviour
         BlackScreen.GetComponent<Canvas>().enabled = false;
     }
 
+    // Enable the canvas and play the video of Cantina
+    void enableCantina()
+    {
+        CantinaCanvas.GetComponent<Canvas>().enabled = true;
+        CantinaSphere.GetComponent<VideoPlayer>().Play();
+    }
+
+    // Disable the canvas and stop the video of Cantina
+    void disableCantina()
+    {
+        CantinaCanvas.GetComponent<Canvas>().enabled = false;
+        CantinaSphere.GetComponent<VideoPlayer>().Stop();
+    }
+
+    // Enable the canvas and play the video of Cube
+    void enableCube()
+    {
+        CubeCanvas.GetComponent<Canvas>().enabled = true;
+        CubeSphere.GetComponent<VideoPlayer>().Play();
+    }
+
+    // Disable the canvas and stop the video of Cube
+    void disableCube()
+    {
+        CubeCanvas.GetComponent<Canvas>().enabled = false;
+        CubeSphere.GetComponent<VideoPlayer>().Stop();
+    }
+
     // Enable the canvas and play the video of livingRoom
     void enableLivingRoom()
     {
@@ -68,24 +108,24 @@ public class TransitionRoom : MonoBehaviour
         LivingRoomSphere.GetComponent<VideoPlayer>().Stop();
     }
 
-    // Enable the canvas and play the video of Cantina
-    void enableCantina()
+    // Enable the canvas and play the video of mezzanine
+    void enableMezzanine()
     {
-        CantinaCanvas.GetComponent<Canvas>().enabled = true;
-        CantinaSphere.GetComponent<VideoPlayer>().Play();
+        MezzanineCanvas.GetComponent<Canvas>().enabled = true;
+        MezzanineSphere.GetComponent<VideoPlayer>().Play();
     }
 
-    // Disable the canvas and play the video of Cantina
-    void disableCantina()
+    // Disable the canvas and stop the video of mezzanine
+    void disableMezzanine()
     {
-        CantinaCanvas.GetComponent<Canvas>().enabled = false;
-        CantinaSphere.GetComponent<VideoPlayer>().Stop();
+        MezzanineCanvas.GetComponent<Canvas>().enabled = false;
+        MezzanineSphere.GetComponent<VideoPlayer>().Stop();
     }
 
     /// <summary>
     /// Make the transition of cantina to living room
-    /// When a button is trigger
-    /// The method is asynchronous to let the face animation playing
+    /// When the cantina button is trigger
+    /// The method is asynchronous to let the fade animation playing
     /// </summary>
     public async void CantinaToLivingRoom()
     {
@@ -97,9 +137,79 @@ public class TransitionRoom : MonoBehaviour
     }
 
     /// <summary>
+    /// Make the transition of cantina to cube
+    /// When the cube button is trigger
+    /// The method is asynchronous to let the fade animation playing
+    /// </summary>
+    public async void CantinaToCube()
+    {
+        ScreenFade();
+        await Task.Delay(2000);
+        disableCantina();
+        enableCube();
+        ScreenUnfade();
+    }
+
+    /// <summary>
+    /// Make the transition of cube to cantina
+    /// When the cantina button is trigger
+    /// The method is asynchronous to let the fade animation playing
+    /// </summary>
+    public async void CubeToCantina()
+    {
+        ScreenFade();
+        await Task.Delay(2000);
+        disableCube();
+        enableCantina();
+        ScreenUnfade();
+    }
+
+    /// <summary>
+    /// Make the transition of cube to living room
+    /// When the living room button is trigger
+    /// The method is asynchronous to let the fade animation playing
+    /// </summary>
+    public async void CubeToLivingRoom()
+    {
+        ScreenFade();
+        await Task.Delay(2000);
+        disableCube();
+        enableLivingRoom();
+        ScreenUnfade();
+    }
+
+    /// <summary>
+    /// Make the transition of cube to mezzanine
+    /// When the mezzanine button is trigger
+    /// The method is asynchronous to let the fade animation playing
+    /// </summary>
+    public async void CubeToMezzanine()
+    {
+        ScreenFade();
+        await Task.Delay(2000);
+        disableCube();
+        enableMezzanine();
+        ScreenUnfade();
+    }
+
+    /// <summary>
+    /// Make the transition of Living room to Cube
+    /// when the cube button is trigger
+    /// The method is asynchronous to let the fade animation playing
+    /// </summary>
+    public async void LivingRoomToCube()
+    {
+        ScreenFade();
+        await Task.Delay(2000);
+        disableLivingRoom();
+        enableCube();
+        ScreenUnfade();
+    }
+
+    /// <summary>
     /// Make the transition of living room to cantina
-    /// When a button is trigger
-    /// The method is asynchronous to let the face animation playing
+    /// When the cantina button is trigger
+    /// The method is asynchronous to let the fade animation playing
     /// </summary>
     public async void LivingRoomToCantina()
     {
@@ -107,6 +217,20 @@ public class TransitionRoom : MonoBehaviour
         await Task.Delay(2000);
         disableLivingRoom();
         enableCantina();
+        ScreenUnfade();
+    }
+
+    /// <summary>
+    /// Make the transition of mezzanine to cube
+    /// When the cube button is trigger
+    /// The method is asynchronous to let the fade animation playing
+    /// </summary>
+    public async void MezzanineToCube()
+    {
+        ScreenFade();
+        await Task.Delay(2000);
+        disableMezzanine();
+        enableCube();
         ScreenUnfade();
     }
 }
