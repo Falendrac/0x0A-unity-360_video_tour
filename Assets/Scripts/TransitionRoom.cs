@@ -20,6 +20,7 @@ public class TransitionRoom : MonoBehaviour
     GameObject LivingRoomSphere;
     // Canvas to make the blackscreen
     GameObject BlackScreen;
+    // Animator in child of BlackScreen
     Animator BlackScreenAnimator;
 
     // Start is called before the first frame update
@@ -33,12 +34,17 @@ public class TransitionRoom : MonoBehaviour
         BlackScreenAnimator = BlackScreen.GetComponentInChildren<Animator>();
     }
 
+    // Enable the canvas of BlackScreen GameObject and enable the animator to 
+    // play the animation of fade
     void ScreenFade()
     {
         BlackScreen.GetComponent<Canvas>().enabled = true;
         BlackScreenAnimator.enabled = true;
     }
 
+    // Set the transition boolean of animator in true, to play the unfade
+    // animation. The method is asynchronous to let the animation playing
+    // Reset the boolean at false and disable Animator and Canvas of BlackScreen
     async void ScreenUnfade()
     {
         BlackScreenAnimator.SetBool("TransitionFinished", true);
@@ -79,6 +85,7 @@ public class TransitionRoom : MonoBehaviour
     /// <summary>
     /// Make the transition of cantina to living room
     /// When a button is trigger
+    /// The method is asynchronous to let the face animation playing
     /// </summary>
     public async void CantinaToLivingRoom()
     {
@@ -92,6 +99,7 @@ public class TransitionRoom : MonoBehaviour
     /// <summary>
     /// Make the transition of living room to cantina
     /// When a button is trigger
+    /// The method is asynchronous to let the face animation playing
     /// </summary>
     public async void LivingRoomToCantina()
     {
