@@ -211,7 +211,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 137244478}
         m_TargetAssemblyTypeName: TransitionRoom, Assembly-CSharp
-        m_MethodName: LivingRoomToCantina
+        m_MethodName: doTransition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -291,6 +291,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc036c3eaf1d10a4a90e6bb879f756e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentCanvas: {fileID: 1697728429}
+  currentVideo: {fileID: 1242502879}
+  targetCanvas: {fileID: 477701603}
+  targetVideo: {fileID: 1540366588}
 --- !u!1 &168377238
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +446,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc036c3eaf1d10a4a90e6bb879f756e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentCanvas: {fileID: 616792545}
+  currentVideo: {fileID: 1630759044}
+  targetCanvas: {fileID: 639675414}
+  targetVideo: {fileID: 351364336}
 --- !u!95 &179331877
 Animator:
   serializedVersion: 4
@@ -508,7 +516,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 179331876}
         m_TargetAssemblyTypeName: TransitionRoom, Assembly-CSharp
-        m_MethodName: MezzanineToCube
+        m_MethodName: doTransition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -645,6 +653,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc036c3eaf1d10a4a90e6bb879f756e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentCanvas: {fileID: 1697728429}
+  currentVideo: {fileID: 1242502879}
+  targetCanvas: {fileID: 639675414}
+  targetVideo: {fileID: 351364336}
 --- !u!95 &245439984
 Animator:
   serializedVersion: 4
@@ -711,7 +723,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 245439983}
         m_TargetAssemblyTypeName: TransitionRoom, Assembly-CSharp
-        m_MethodName: LivingRoomToCube
+        m_MethodName: doTransition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3455,7 +3467,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1031904365}
         m_TargetAssemblyTypeName: TransitionRoom, Assembly-CSharp
-        m_MethodName: CantinaToLivingRoom
+        m_MethodName: doTransition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3515,6 +3527,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc036c3eaf1d10a4a90e6bb879f756e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentCanvas: {fileID: 477701603}
+  currentVideo: {fileID: 1540366588}
+  targetCanvas: {fileID: 1697728429}
+  targetVideo: {fileID: 1242502879}
 --- !u!1 &1236407083
 GameObject:
   m_ObjectHideFlags: 0
@@ -3919,6 +3935,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc036c3eaf1d10a4a90e6bb879f756e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentCanvas: {fileID: 639675414}
+  currentVideo: {fileID: 351364336}
+  targetCanvas: {fileID: 1697728429}
+  targetVideo: {fileID: 1242502879}
 --- !u!95 &1438962962
 Animator:
   serializedVersion: 4
@@ -3985,7 +4005,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1438962961}
         m_TargetAssemblyTypeName: TransitionRoom, Assembly-CSharp
-        m_MethodName: CubeToLivingRoom
+        m_MethodName: doTransition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4087,6 +4107,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc036c3eaf1d10a4a90e6bb879f756e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentCanvas: {fileID: 477701603}
+  currentVideo: {fileID: 1540366588}
+  targetCanvas: {fileID: 639675414}
+  targetVideo: {fileID: 351364336}
 --- !u!95 &1446866433
 Animator:
   serializedVersion: 4
@@ -4153,7 +4177,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1446866432}
         m_TargetAssemblyTypeName: TransitionRoom, Assembly-CSharp
-        m_MethodName: CantinaToCube
+        m_MethodName: doTransition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4388,6 +4412,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc036c3eaf1d10a4a90e6bb879f756e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentCanvas: {fileID: 639675414}
+  currentVideo: {fileID: 351364336}
+  targetCanvas: {fileID: 477701603}
+  targetVideo: {fileID: 1540366588}
 --- !u!95 &1594000221
 Animator:
   serializedVersion: 4
@@ -4454,7 +4482,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1594000220}
         m_TargetAssemblyTypeName: TransitionRoom, Assembly-CSharp
-        m_MethodName: CubeToCantina
+        m_MethodName: doTransition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5627,6 +5655,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc036c3eaf1d10a4a90e6bb879f756e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentCanvas: {fileID: 639675414}
+  currentVideo: {fileID: 351364336}
+  targetCanvas: {fileID: 616792545}
+  targetVideo: {fileID: 1630759044}
 --- !u!95 &2091462507
 Animator:
   serializedVersion: 4
@@ -5693,7 +5725,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2091462506}
         m_TargetAssemblyTypeName: TransitionRoom, Assembly-CSharp
-        m_MethodName: CubeToMezzanine
+        m_MethodName: doTransition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
