@@ -9,6 +9,9 @@
 * What are render textures
 * How to use Unity’s Video Player component
 
+### Compatible platform
+
+* Meta Quest 2
 
 ## Special attribution
 
