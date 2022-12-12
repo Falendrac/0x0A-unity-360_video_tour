@@ -8,3 +8,10 @@
 * What is the difference between monoscopic and stereoscopic 360 video
 * What are render textures
 * How to use Unity’s Video Player component
+
+
+## Special attribution
+
+### Music
+
+* [Kevin MacLeod - Tech Live](https://filmmusic.io/song/4463-tech-live)
